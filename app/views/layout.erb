@@ -1,25 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <!--
-    normalize.css removes cross-browser differences in defaults, e.g.,
-    differences in how form elements appear between Firefox and IE
-    See: http://necolas.github.com/normalize.css/
-  -->
-  <link rel="stylesheet" href="/css/normalize.css">
-  <!--
-    application.css is where you put your styles
-  -->
-  <link rel="stylesheet" href="/css/application.css">
+  <head>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/application.css">
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="/js/application.js"></script>
+    <title>   </title>
+  </head>
+  <body>
+    <div class="row col-10 col-offset-1">
+      <header class="main-header">
 
-  <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-  <script src="/js/application.js"></script>
+        <div class="col-6">
 
-  <title></title>
-</head>
-<body>
-<div id="content">
-  <%= yield %>
-</div>
-</body>
+        </div>
+
+        <div class="col-6">
+          <% if logged_in? %>
+            <form method="post" action="/sessions">
+              <input type="hidden" name="_method" value="delete" />
+              <input class="button" type="submit" value="Logout" />
+            </form>
+          <% else %>
+            <a class="link" href="/sessions/new">Login</a>
+            <a class="link" href="/users/new">Create Account</a>
+          <% end%>
+        </div>
+
+      </header>
+    </div>
+
+    <div class="main-content col-10 col-offset-1">
+
+      <div class="errors col-4 col-offset-4">
+        <% if defined?(errors) %>
+          <div class='errors'>
+            <ul>
+              <% errors.each do |error| %>
+                <li><%= error %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+      </div>
+
+      <%= yield %>
+
+    </div>
+  </body>
 </html>

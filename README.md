@@ -1,30 +1,53 @@
-> **Note**: This branch (master) contains a skeleton without any app code, perfect for creating a _new_ application or challenge. If you're looking for an example app built with this skeleton, take a look at the [example](/../..//tree/example) branch which includes basic CRUD and RSpec tests.
+# Sinatra MVC Skeleton
 
-### Purpose
-The Sinatra Skeleton:
+## App
 
-1. Provides a foundation for building challenges or creating a new Sinatra application.
-2. Demonstrates a reasonable set of practices around building Sinatra applications.
-3. Eases the transition to Rails for Dev Bootcamp students
+### Controllers
 
-### Quickstart
+sessions
 
-1.  `bundle install`
-2.  `shotgun config.ru`
+user
 
-As needed, create models & migrations with the `rake` tasks:
+### Helpers
 
-```
-rake generate:migration  # Create an empty migration in db/migrate, e.g., rake generate:migration NAME=create_tasks
-rake generate:model      # Create an empty model in app/models, e.g., rake generate:model NAME=User
-```
+update visisted count
 
-### Contributing
+visist counter
 
-We would love for you to help make the skeleton more awesome, There are three ways to contribute:
+current user
 
-1. Ask for a bug fix or enhancement!
-2. Submit a pull request for a bug fix or enhancement!
-3. Code review an open pull request!
+logged in?
 
-Be prepared to give and receive specific, actionable, and kind feedback!
+### Models
+
+user => MVP validations and bcrypt support
+
+## Views
+
+### sessions
+
+login form
+
+### users
+
+create new user form
+
+## Layout
+
+user validation for login and create account included
+
+errors section included
+
+## CSS
+
+custom framework
+
+mobile responsive
+
+default tags
+
+## JS
+
+Basic setup for ajax with examples of single and multi calls
+
+
